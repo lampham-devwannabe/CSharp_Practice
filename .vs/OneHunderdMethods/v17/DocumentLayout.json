@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Workspace\\CSharp\\Slot2Exercises\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5BC5BDE5-9DAD-40CD-804A-3B4991F3E5CE}|OneHunderdMethods\\OneHunderdMethods.csproj|c:\\workspace\\csharp\\slot2exercises\\onehunderdmethods\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BC5BDE5-9DAD-40CD-804A-3B4991F3E5CE}|OneHunderdMethods\\OneHunderdMethods.csproj|solutionrelative:onehunderdmethods\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Workspace\\CSharp\\Slot2Exercises\\OneHunderdMethods\\Program.cs",
+              "RelativeDocumentMoniker": "OneHunderdMethods\\Program.cs",
+              "ToolTip": "C:\\Workspace\\CSharp\\Slot2Exercises\\OneHunderdMethods\\Program.cs",
+              "RelativeToolTip": "OneHunderdMethods\\Program.cs",
+              "ViewState": "AQIAAA0CAAAAAAAAAADwvzgCAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T14:38:23.678Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
