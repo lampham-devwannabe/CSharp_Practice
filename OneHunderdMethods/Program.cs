@@ -797,5 +797,163 @@ namespace OneHunderdMethods
             Array.Reverse(arr);
             Console.WriteLine(new string(arr).Equals(input));
         }
+
+        public static void Q57()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter an integer: ");
+            }
+            int index = 0;
+            int product = arr[index] * arr[index + 1];
+            while (index < arr.Length - 1)
+            {
+                product = (arr[index] * arr[index + 1] > product) ?
+                    (arr[index] * arr[index + 1]) : product;
+                index++;
+            }
+            Console.WriteLine($"Highest product: {product}");
+        }
+
+        public static void Q58()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter an integer: ");
+            }
+            Array.Sort(arr);
+            int counter = 0;
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                // neu arr[i+1] ko phai so lien ke cua arr[i] thi counter + 1
+                counter += arr[i + 1] - arr[i] - 1;
+            }
+            Console.WriteLine(counter);
+        }
+
+        public static void Q59()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter an integer: ");
+            }
+            Array.Sort(arr);
+            int counter = 0;
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                counter += arr[i + 1] - arr[i] - 1;
+            }
+            Console.WriteLine(counter == 0);
+        }
+
+        public static void Q60()
+        {
+            
+        }
+
+        public static void Q61()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter an integer: ");
+            }
+            int[] temp = arr.Where(x => x != -5).OrderBy(x => x).ToArray();
+            int ctr = 0;
+            int[]result = arr.Select(x => x >= 0 ? temp[ctr++] : -5).ToArray();
+            Console.WriteLine(string.Join(", ", result));
+        }
+
+        public static void Q62()
+        {
+            string s = getString("Enter a string: ");
+
+        }
+
+        public static void Q63()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter a number: ");
+            }
+            bool flag = false;
+            int find = getInt("Enter a number to find in array: ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == find)
+                {
+                    flag = true;
+                }
+            }
+            Console.WriteLine(flag);
+        }
+
+        public static void Q64()
+        {
+            FileInfo f = new FileInfo("C:\\Workspace\\Demo\\Q29.txt");
+            Console.WriteLine(f.Length.ToString());
+        }
+
+        public static void Q65()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length;i++)
+            {
+                arr[i] = getInt("Enter a number: ");
+            }
+            Console.Write($"Orginal array: {string.Join(", ", arr)}");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] *= arr.Length;
+            }
+            Console.Write($"\nAfter multiply with array length: {string.Join(", ", arr)}");
+        }
+
+        public static void Q66()
+        {
+            int a = getInt("Enter first number: ");
+            int b = getInt("Enter second number: ");
+            if (a > b)
+            {
+                Console.WriteLine(a);
+            } else
+            {
+                Console.WriteLine(b);
+            }
+        }
+
+        public static void Q67()
+        {
+            string s = getString("Enter a string: ");
+            s = s.Replace("P", "9").Replace("T", "0").Replace("S", "1").Replace("H", "6").Replace("A", "8");
+            Console.WriteLine(s);
+        }
+
+        public static void Q68()
+        {
+            string s = getString("Enter a string: ");
+            char[] arr = s.ToCharArray();
+            int ctr = 0;
+            string find = getString("Enter char you want to find: ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                string temp = arr[i].ToString();
+                if (temp.Equals(find, StringComparison.OrdinalIgnoreCase))
+                {
+                    ctr++;
+                }
+            }
+            Console.WriteLine(ctr);
+        }
     }
 }
