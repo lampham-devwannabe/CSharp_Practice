@@ -26,3 +26,4 @@ C:\Workspace\CSharp\Slot2Exercises\OneHunderdMethods\obj\Debug\net8.0\refint\One
 C:\Workspace\CSharp\Slot2Exercises\OneHunderdMethods\obj\Debug\net8.0\OneHunderdMethods.pdb
 C:\Workspace\CSharp\Slot2Exercises\OneHunderdMethods\obj\Debug\net8.0\OneHunderdMethods.genruntimeconfig.cache
 C:\Workspace\CSharp\Slot2Exercises\OneHunderdMethods\obj\Debug\net8.0\ref\OneHunderdMethods.dll
+C:\Workspace\CSharp\Slot2Exercises\OneHunderdMethods\obj\Debug\net8.0\OneHunderdMethods.sourcelink.json

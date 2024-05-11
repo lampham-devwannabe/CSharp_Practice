@@ -566,7 +566,236 @@ namespace OneHunderdMethods
 
         public static void Q42()
         {
+            string s = getString("Enter a string: ");
+            if (s.Length < 4)
+            {
+                Console.WriteLine(s.ToUpper());
+            } else
+            {
+                Console.WriteLine(s.Substring(0,4).ToLower() + s.Substring(4, s.Length - 4));
+            }
+        }
 
+        public static void Q43()
+        {
+            string s = getString("Enter a string: ");
+            Console.WriteLine(s.StartsWith("wwwww"));
+        }
+
+        public static void Q44()
+        {
+            string s = getString("Enter a string: ");
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.Write(s[i]);
+                }
+            }
+        }
+
+        public static void Q45()
+        {
+            int amount = getInt("Enter array length: ");
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length ; i++)
+            {
+                arr[i] = getInt("Enter an integer: ");
+            }
+            int count = 0;
+            int find = getInt("Enter an integer you want to find: ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == find)
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine($"Number of {find} present in the array: {count}");
+        }
+
+        public static void Q46()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter an integer: ");
+            }
+            int find = getInt("Enter an integer to see if it appears at the first or last element of the array: ");
+            Console.WriteLine(arr[0].Equals(find) || arr[arr.Length - 1].Equals(find));
+        }
+
+        public static void Q47()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter an integer: ");
+            }
+            int sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+            }
+            Console.WriteLine(sum);
+        }
+
+        public static void Q48()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter an integer: ");
+            }
+            Console.WriteLine(arr[0].Equals(arr[arr.Length - 1]));
+        }
+
+        public static void Q49()
+        {
+            int amount1 = checkMinMax("Enter first array length: ", 1, int.MaxValue);
+            int[] arr1 = new int[amount1];
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                arr1[i] = getInt("Enter an integer: ");
+            }
+            int amount2 = checkMinMax("Enter second array length: ", 1, int.MaxValue);
+            int[] arr2 = new int[amount2];
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                arr2[i] = getInt("Enter an integer: ");
+            }
+            Console.WriteLine(arr1[0].Equals(arr2[0]) || arr1[arr1.Length - 1].Equals(arr2[0]) 
+                || arr1[0].Equals(arr2[arr2.Length - 1 ]) || arr1[arr1.Length - 1].Equals(arr2[arr2.Length - 1]));
+        }
+
+        public static void Q50()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter an integer: ");
+            }
+            Console.Write("Array before rotating: ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i]);
+            }
+            int temp = 0;
+            temp = arr[0];
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                arr[i] = arr[i + 1];
+            }
+            arr[arr.Length - 1] = temp;
+            Console.Write("\nArray after rotating: ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i]);
+            }
+        }
+
+        public static void Q51()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter an integer: ");
+            }
+            int max = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
+            }
+            Console.WriteLine($"Largest number in the array: {max}");
+        }
+
+        public static void Q52()
+        {
+            int amount = getInt("Enter array length: ");
+            Console.WriteLine("--- 1st array ---");
+            int[] arr1 = new int[amount];
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                arr1[i] = getInt("Enter an integer: ");
+            }
+            Console.WriteLine("--- 2nd array ---");
+            int[] arr2 = new int[amount];
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                arr2[i] = getInt("Enter an integer: ");
+            }
+            Console.WriteLine("--- 3rd array ---");
+            int[] arr3 = new int[amount];
+            for (int i = 0; i < arr3.Length; i++)
+            {
+                arr3[i] = getInt("Enter an integer: ");
+            }
+            int[] result = new int[3];
+            result[0] = arr1[(arr1.Length + 1) /2];
+            result[1] = arr2[(arr2.Length + 1) / 2];
+            result[2] = arr3[(arr3.Length + 1) / 2];
+            Console.WriteLine($"\nNew array: [{string.Join(", ", result)}]");
+        }
+
+        public static void Q53()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter an integer: ");
+            }
+            bool flag = false;
+            for (int i = 0;i < arr.Length; i++)
+            {
+                if (arr[i] % 2 != 0) 
+                {
+                    flag = true;
+                }
+            }
+            Console.WriteLine(flag);
+        }
+
+        public static void Q54()
+        {
+            int year = checkMinMax("Enter a year: ", 1, int.MaxValue);
+            int century = (year / 100) + (year % 100 == 0 ? 0 : 1);
+            Console.WriteLine($"Century of year {year}: {century}");
+        }
+
+        public static void Q55()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter an integer: ");
+            }
+            int index = 0;
+            int product = arr[index] * arr[index + 1];
+            while (index < arr.Length - 1)
+            {
+                product = (arr[index] * arr[index + 1] > product) ?
+                    (arr[index] * arr[index + 1]) : product;
+                index++;
+            }
+            Console.WriteLine($"Largest product: {product}");
+        }
+
+        public static void Q56()
+        {
+            string input = getString("Enter a string: ");
+            char[] arr = input.ToCharArray();
+            Array.Reverse(arr);
+            Console.WriteLine(new string(arr).Equals(input));
         }
     }
 }
