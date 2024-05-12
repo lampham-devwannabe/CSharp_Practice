@@ -1,5 +1,6 @@
 ﻿using System.Collections.Specialized;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace OneHunderdMethods
 {
@@ -1053,13 +1054,171 @@ namespace OneHunderdMethods
         public static void Q79()
         {
             int a = getInt("Enter an integer to convert to string: ");
-            Console.WriteLine($"Orginal value and type: {a}, {a.GetType().ToString()}");
+            Console.WriteLine($"Orginal value and type: {a}, {a.GetType()}");
             string c1 = Convert.ToString(a);
-            Console.WriteLine($"Converted value and type: {c1}, {c1.GetType().ToString()}");
+            Console.WriteLine($"Converted value and type: {c1}, {c1.GetType()}");
             string s = getString("Enter a string to convert to int: ");
-            Console.WriteLine($"Orginal value and type: {s}, {s.GetType().ToString()}");
+            Console.WriteLine($"Orginal value and type: {s}, {s.GetType()}");
             int c2 = Convert.ToInt32(s);
-            Console.WriteLine($"Converted value and type: {c2}, {c2.GetType().ToString()}");
+            Console.WriteLine($"Converted value and type: {c2}, {c2.GetType()}");
+        }
+
+        public static void Q80()
+        {          
+            object[] arr = new object[5];
+            arr[0] = 25;
+            arr[1] = "Pham Thanh Lam";
+            arr[2] = true;
+            arr[3] = System.DateTime.Now;
+            arr[4] = 11.55;
+            Console.WriteLine("--- Original array ---");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine($"Value -> {arr[i]} :: Type -> {arr[i].GetType()}");
+            }
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = arr[i].ToString();
+            }
+            Console.WriteLine("--- Converted array ---");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine($"Value -> {arr[i]} :: Type -> {arr[i].GetType()}");
+            }
+        }
+
+        public static void Q81()
+        {
+            int a = checkMinMax("Enter a number: ", 10, 99);
+            int oneDigit = a % 10;
+            int tenDigit = a / 10;
+            int swap = oneDigit * 10 + tenDigit;
+            Console.WriteLine($"Input value > swapped value: {a > swap}");
+        }
+
+        public static void Q82()
+        {
+            string s = getString("Enter a string: ");
+            Console.Write($"After removing non-letter characters: {Regex.Replace(s, @"[^a-zA-Z]", "")}");
+        }
+
+        public static void Q83()
+        {
+            string s = getString("Enter a string: ");
+            Console.Write($"After removing vowel characters: {Regex.Replace(s, @"[ueoaiUEOAI]", "")}");
+        }
+
+        public static void Q84()
+        {
+            string s = getString("Enter a string: ");
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (Char.IsLower(s[i])) {
+                    Console.Write($"{i} ");
+                }
+            }
+        }
+
+        public static void Q85()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            double[] arr = new double[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getDouble("Enter a number: ");
+            }
+            Console.WriteLine("--- Orginal array ---");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            for (int i = 1; i < arr.Length; i++)
+            {
+                arr[i] = arr[i] + arr[i - 1];
+            }
+            Console.WriteLine("\n--- Cumulative array ---");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+        }
+
+        public static void Q86()
+        {
+            string s = getString("Enter a string: ");
+            int letterCount = 0;
+            int digitCount = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (Char.IsLetter(s[i]))
+                {
+                    letterCount++;
+                }
+                if (Char.IsDigit(s[i]))
+                {
+                    digitCount++;
+                }
+            }
+            Console.Write($"Letter: {letterCount} | Digit: {digitCount}");
+        }
+
+        public static void Q87()
+        {
+            bool input = bool.Parse(getString("Input boolean: "));
+            Console.WriteLine($"Reverse boolean: {!input}");
+        }
+
+        public static void Q88()
+        {
+            int a = getInt("Enter number of straight lines: ");
+            Console.WriteLine($"Sum of interior angles: {180 * (a - 2)}");
+        }
+
+        public static void Q89()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter a number: ");
+            }
+            int posCount = 0;
+            int negCount = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] >= 0) 
+                {
+                    posCount++;
+                } else
+                {
+                    negCount++;
+                }
+            }
+            Console.WriteLine($"Positive: {posCount} | Negative: {negCount}");
+        }
+
+        public static void Q90()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter a number: ");
+            }
+            int zeroCount = 0;
+            int oneCount = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == 0)
+                {
+                    zeroCount++;
+                }
+                if (arr[i] == 1)
+                {
+                    oneCount++;
+                }
+            }
+            Console.WriteLine($"Zeros: {zeroCount} | Ones: {oneCount}");
         }
     }
 }

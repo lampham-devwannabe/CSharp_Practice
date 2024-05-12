@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OneHunderdMethods")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75c633ae59d4a1b7a373ce2ff62ef051303059e7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43b79b9dfd9760c9e89a63cc04addfba5714cf39")]
 [assembly: System.Reflection.AssemblyProductAttribute("OneHunderdMethods")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OneHunderdMethods")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
