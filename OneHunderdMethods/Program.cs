@@ -1220,5 +1220,161 @@ namespace OneHunderdMethods
             }
             Console.WriteLine($"Zeros: {zeroCount} | Ones: {oneCount}");
         }
+
+        public static void Q91()
+        {
+            object[] arr = new object[7];
+            arr[0] = 25;
+            arr[1] = "Pham Thanh Lam";
+            arr[2] = true;
+            arr[3] = System.DateTime.Now;
+            arr[4] = 11.55;
+            arr[5]  = 6;
+            arr[6] = 12;
+            Console.WriteLine("--- Mixed array ---");
+            for (int i = 0; i < arr.Length ; i++)
+            {
+                Console.WriteLine($"{arr[i]} ");
+            }
+            int[] int_arr = arr.OfType<int>().ToArray();
+            Console.WriteLine("--- Int only array ---");
+            for (int i = 0; i < int_arr.Length; i++)
+            {
+                Console.WriteLine($"{int_arr[i]} ");
+            }
+        }
+
+        public static void Q92()
+        {
+            int a = getInt("Original number: ");
+            for (int i = 2; i < a; i++)
+            {
+                if (a % i == 0)
+                {
+                    a++;
+                    i = 2;
+                }
+            }
+            Console.WriteLine($"Next/Current prime number: {a}");
+        }
+
+        public static void Q93()
+        {
+            int a = getInt("Enter a number: ");
+            int result = (int) Math.Sqrt(a);
+            Console.WriteLine($"{a} -> {result}");
+        }
+
+        public static void Q94()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            string[] arr = new string[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getString("Enter a string: ");
+            }
+            string find = arr[0];
+            int rl = find.Length;
+            foreach (string s in arr)
+            {
+                int j = 0;
+                foreach (char c in s)
+                {
+                    if (j >= rl || find[j] != c)
+                        break;
+                    j += 1;
+                }
+                rl = Math.Min(rl, j);
+            }
+            string result = find.Substring(0, rl);
+            Console.WriteLine($"Longest common prefix: {result}");
+        }
+
+        public static void Q95()
+        {
+            string s = getString("Enter a string: ");
+            bool status = true;
+            Stack<char> ch = new Stack<char>();
+            foreach (var item in s.ToCharArray())
+            {
+                if (item == '(')
+                {
+                    ch.Push(')');
+                } else if (item == '<')
+                {
+                    ch.Push('>');
+                } else if (item == '[')
+                {
+                    ch.Push(']');
+                } else if (item == '{')
+                {
+                    ch.Push('}');
+                } else if (ch.Count == 0 || ch.Pop() != item)
+                {
+                    status = false;
+                } 
+            }
+            Console.WriteLine(status);
+        }
+
+        public static void Q96()
+        {
+            string s = getString("Enter a string: ");
+            bool status = true;
+            if (s.Length > 1)
+            {
+                var b = s[0];
+                for (int i  = 1; i < s.Length; i++)
+                {
+                    var c = s[i];
+                    if (c != b)
+                    {
+                        status = false;
+                    }
+                }
+            }
+            Console.WriteLine(status);
+        }
+
+        public static void Q97()
+        {
+            string s = getString("Enter a string: ");
+            Console.WriteLine(double.TryParse(s, out _));
+        }
+
+        public static void Q98()
+        {
+           
+        }
+
+        public static void Q99()
+        {
+
+        }
+
+        public static void Q100()
+        {
+
+        }
+
+        public static void Q101()
+        {
+
+        }
+
+        public static void Q102()
+        {
+
+        }
+
+        public static void Q103()
+        {
+
+        }
+
+        public static void Q104()
+        {
+
+        }
     }
 }
