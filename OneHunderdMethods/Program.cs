@@ -955,5 +955,111 @@ namespace OneHunderdMethods
             }
             Console.WriteLine(ctr);
         }
+
+        public static void Q69()
+        {
+            string s = getString("Enter a string: ");         
+            Console.WriteLine(s.Equals(s.ToLower()) || s.Equals(s.ToUpper()));
+        }
+
+        public static void Q70()
+        {
+            string s = getString("Enter a string: ");
+            s = s.Remove(0, 1);
+            s = s.Remove(s.Length - 1, 1);
+            Console.WriteLine(s);
+        }
+
+        public static void Q71()
+        {
+            string s = getString("Enter a string: ");
+            bool flag = false;
+            for (int i = 0; i < s.Length - 1; i++)
+            {
+                if (s[i].Equals(s[i+1])) {
+                    flag = true;
+                }
+            }
+            Console.WriteLine(flag);
+        }
+
+        public static void Q72()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < amount; i++)
+            {
+                arr[i] = getInt("Enter a number: ");
+            }
+            Console.WriteLine(arr.Average() % 1 == 0);
+        }
+
+        public static void Q73()
+        {
+            string s = getString("Orginal string: ");
+            char[] arr = s.ToCharArray();
+            Array.Sort(arr);
+            Console.WriteLine($"Sorted string: {string.Join("", arr)}");
+        }
+
+        public static void Q74()
+        {
+            string s = getString("Enter a string: ");
+            if (s.Length % 2 == 0)
+            {
+                Console.WriteLine("Even length");
+            } else
+            {
+                Console.WriteLine("Odd length");
+            }
+        }
+
+        public static void Q75()
+        {
+            int a = getInt("Enter nth odd number: ");
+            Console.WriteLine($"Result: {a * 2 - 1}");
+        }
+
+        public static void Q76()
+        {
+            string s = getString("Enter a char: ");
+            char c = char.Parse(s);
+            int value = (int)c;
+            Console.WriteLine($"ASCII value of {c} is: {value}");
+        }
+
+        public static void Q77()
+        {
+            string word = getString("Enter a word: ");
+            Console.WriteLine(word.EndsWith("s"));
+        }
+
+        public static void Q78()
+        {
+            int amount = checkMinMax("Enter array length: ", 1, int.MaxValue);
+            int[] arr = new int[amount];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter a number: ");
+            }
+            int sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i] * arr[i];
+            }
+            Console.WriteLine($"Result: {sum}");
+        }
+
+        public static void Q79()
+        {
+            int a = getInt("Enter an integer to convert to string: ");
+            Console.WriteLine($"Orginal value and type: {a}, {a.GetType().ToString()}");
+            string c1 = Convert.ToString(a);
+            Console.WriteLine($"Converted value and type: {c1}, {c1.GetType().ToString()}");
+            string s = getString("Enter a string to convert to int: ");
+            Console.WriteLine($"Orginal value and type: {s}, {s.GetType().ToString()}");
+            int c2 = Convert.ToInt32(s);
+            Console.WriteLine($"Converted value and type: {c2}, {c2.GetType().ToString()}");
+        }
     }
 }
