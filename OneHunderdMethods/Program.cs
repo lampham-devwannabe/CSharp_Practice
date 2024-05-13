@@ -1,5 +1,8 @@
 ﻿using System.Collections.Specialized;
+using System.Data;
 using System.Globalization;
+using System.Reflection.Metadata;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 
 namespace OneHunderdMethods
@@ -1344,7 +1347,7 @@ namespace OneHunderdMethods
 
         public static void Q98()
         {
-           
+                       
         }
 
         public static void Q99()
@@ -1352,29 +1355,105 @@ namespace OneHunderdMethods
 
         }
 
+        public static bool checkEquals(object a, object b)
+        {
+            if (!a.Equals(b))
+            {
+                return false;
+            }
+
+            if (!a.GetType().Equals(b.GetType()))
+            {
+                return false;
+            }
+            return true;
+        }
+
         public static void Q100()
         {
-
+            bool b1 = true;
+            bool b2 = false;
+            Console.WriteLine($"Boolean 1: {b1} | Boolean 2: {b2} -> Check: {checkEquals(b1, b2)}");
+            string s1 = "AAA";
+            string s2 = "BBB";
+            Console.WriteLine($"String 1: {s1} | String 2: {s2} -> Check: {checkEquals(s1, s2)}");
+            bool b3 = true;
+            string s3 = "true";
+            Console.WriteLine($"OG value 1: {b3} | OG value 2: {s3} -> Check: {checkEquals(b3, s3)}");
+            int i1 = 21;
+            int i2 = 21;
+            Console.WriteLine($"Int 1: {i1} || Int 2: {i2} -> Check: {checkEquals(i1, i2)}");
         }
+
+        public const double EPSILON = 1.0e-15;
 
         public static void Q101()
         {
-
+            ulong fact = 1;
+            double e = 2.0;
+            double e0;
+            uint n = 2;
+            do
+            {
+                e0 = e;
+                fact *= n++;
+                e += 1.0 / fact;
+            } while (Math.Abs(e - e0) >= EPSILON);
+            Console.WriteLine($"e = {e:F15}");
         }
 
         public static void Q102()
         {
+            int a = checkMinMax("Enter an integer: ", 1, int.MaxValue);
+            var M =
+                Enumerable.Range(0, a)
+                    .Select(i =>
+                        Enumerable.Repeat(0, a)
+                            .Select((z, j) => j == i ? 1 : 0) 
+                            .ToList()
+                    )
+                    .ToList();
+            foreach (var row in M)
+            {
+                foreach (var element in row)
+                {
+                    Console.Write($"{element} "); // 
+                }
+                Console.WriteLine(); //
+            }
 
         }
+
+        public static string sort103(string s)
+        {
+            var nums = s.Where(char.IsDigit).OrderBy(el => el).ToList();
+            var chars = s.Where(char.IsLetter)
+                .Select(el => new { l_char = char.ToLower(el), _char = el })
+                .OrderBy(el => el.l_char)
+                .ThenByDescending(el => el._char)
+                .ToList();
+            return new string(chars.Select(el => el._char).Concat(nums).ToArray());
+        } 
 
         public static void Q103()
         {
+            string s = getString("Enter a string: ");
+            Console.WriteLine($"{sort103(s)}");
+        }
 
+        public static int checkSame(int x, int y, int z)
+        {
+            return (x == y && y == z) ? 3 : (x != y && y != z && x != z) ? 0 : 2;
         }
 
         public static void Q104()
-        {
-
+        {          
+            int[] arr = new int[3];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = getInt("Enter a number: ");
+            }
+            Console.WriteLine($"({string.Join(", ", arr)}) -> {checkSame(arr[0], arr[1], arr[2])}");
         }
     }
 }
