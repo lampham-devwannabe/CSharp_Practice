@@ -1345,14 +1345,58 @@ namespace OneHunderdMethods
             Console.WriteLine(double.TryParse(s, out _));
         }
 
+        public static bool checkDescending(int x)
+        {
+            if (x < 10) return true;
+            string s = Convert.ToString(x);
+            for (int i = 0; i < s.Length - 1 ; i++)
+            {
+                if (s[i] <= s[i+1])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public static void Q98()
         {
-                       
+            int num = 2;
+            while (num < int.MaxValue)
+            {
+                if (isPrime(num) && checkDescending(num))
+                {
+                    Console.Write($"{num} ");
+                }
+                num++;
+            }
+        }
+
+        public static bool checkAscending(int x)
+        {
+            if (x < 10) return true;
+            string s = Convert.ToString(x);
+            for (int i = 0; i < s.Length - 1; i++)
+            {
+                if (s[i] >= s[i + 1])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public static void Q99()
         {
-
+            int num = 2;
+            while (num < int.MaxValue)
+            {
+                if (isPrime(num) && checkAscending(num))
+                {
+                    Console.Write($"{num} ");
+                }
+                num++;
+            }
         }
 
         public static bool checkEquals(object a, object b)
